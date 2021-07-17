@@ -1,3 +1,11 @@
+## Run Project:
+
+-add-migration NewEvent -Context EventStoreSqlContext
+-update-database -Context EventStoreSqlContext
+
+-add-migration NewTest -Context AppliactionContext
+-update-database -Context AppliactionContext
+
 ## Technologies implemented:
 
 - ASP.NET 5.0 (with .NET Core 5.0)
@@ -20,6 +28,7 @@
 - Domain Events
 - Domain Notification
 - Domain Validations
+- Aggregate
 - CQRS (Imediate Consistency)
 - Event Sourcing
 - Unit of Work
