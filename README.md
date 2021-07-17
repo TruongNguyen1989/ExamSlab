@@ -1,10 +1,10 @@
 ## Run Project:
 
--add-migration NewEvent -Context EventStoreSqlContext
--update-database -Context EventStoreSqlContext
+- add-migration NewEvent -Context EventStoreSqlContext
+- update-database -Context EventStoreSqlContext
 
--add-migration NewTest -Context AppliactionContext
--update-database -Context AppliactionContext
+- add-migration NewTest -Context AppliactionContext
+- update-database -Context AppliactionContext
 
 ## Technologies implemented:
 
