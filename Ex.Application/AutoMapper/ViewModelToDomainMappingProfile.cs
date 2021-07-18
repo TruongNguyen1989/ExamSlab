@@ -22,6 +22,9 @@ namespace Ex.Application.AutoMapper
 
             CreateMap<ProductUpdateModel, UpdateProductCommand>()
              .ConstructUsing(c => new UpdateProductCommand(c.Title));
+
+            CreateMap<CreateOrderModel, CreateNewOrderCommand>()
+            .ConstructUsing(c => new CreateNewOrderCommand(c.CustomerId,c.TenantId,c.OrderLines));
         }
     }
 }

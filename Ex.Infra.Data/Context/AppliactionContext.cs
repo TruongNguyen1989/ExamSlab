@@ -31,7 +31,9 @@ namespace Ex.Infra.Data.Context
             modelBuilder.ApplyConfiguration(new TenantMap());
             modelBuilder.ApplyConfiguration(new CustomerMap());
             modelBuilder.ApplyConfiguration(new ProductMap());
-
+            modelBuilder.ApplyConfiguration(new OrderMap());
+            modelBuilder.ApplyConfiguration(new OrderLineMap());
+     
             base.OnModelCreating(modelBuilder);
         }
         public async Task<bool> Commit()

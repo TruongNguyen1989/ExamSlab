@@ -18,5 +18,6 @@ namespace Ex.Domain.Models
         public string Title { get; set; }
         public IEnumerable<Customer> Customers { get; set; }
         public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<Order> Orders { get; set; }
     }
 }

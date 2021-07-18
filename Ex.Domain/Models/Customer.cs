@@ -1,5 +1,6 @@
 ﻿using NetDevPack.Domain;
 using System;
+using System.Collections.Generic;
 
 namespace Ex.Domain.Models
 {
@@ -15,5 +16,6 @@ namespace Ex.Domain.Models
         public string Title { get; set; }
         public Guid TenantId { get; set; }
         public Tenant Tenant { get; set; }
+        public IEnumerable<Order> Orders { get; set; }
     }
 }
