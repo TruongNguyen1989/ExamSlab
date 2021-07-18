@@ -16,10 +16,12 @@ namespace Ex.Infra.Data.Repository
 
         protected readonly AppliactionContext Db;
         protected readonly DbSet<Order> DbSet;
+        protected readonly DbSet<OrderLine> DbSet1;
         public OrderRepository(AppliactionContext appContext)
         {
             Db = appContext;
             DbSet = Db.Set<Order>();
+            DbSet1 = Db.Set<OrderLine>();
         }
         public IUnitOfWork UnitOfWork => Db;
 
@@ -46,6 +48,22 @@ namespace Ex.Infra.Data.Repository
         public async Task<List<Order>> GetOrderByTenantId(Guid tenantId)
         {
             return await DbSet.AsNoTracking().Where(c => c.TenantId == tenantId).ToListAsync();
+        }
+
+        public void UpdateOrderItem(OrderLine orderLine)
+        {
+            Db.Entry(orderLine).State = EntityState.Modified;
+            Db.SaveChanges();
+        }
+        public async Task<Order> OrderLineById(Guid id)
+        {
+            return await DbSet.AsNoTracking().Include(x => x.OrderLines.Where(t => t.Id == id)).FirstOrDefaultAsync();
+        }
+
+        public void DeleteOrderItem(OrderLine orderLine)
+        {
+            Db.Entry(orderLine).State = EntityState.Deleted;
+            Db.SaveChanges();
         }
     }
 }

@@ -12,5 +12,8 @@ namespace Ex.Application.Interfaces
     {
         Task<ValidationResult> Add(CreateOrderModel createOrderModel);
         Task<IEnumerable<OrderViewModel>> GetOrders();
+        Task<OrderViewModel> GetOrder(Guid id);
+        Task<ValidationResult> UpdateOrderItem(OrderLineUpdateModel orderLineUpdate);
+        Task<ValidationResult> DeleteOrderItem(DeleteOrderLineModel deleteOrderLineModel);
     }
 }

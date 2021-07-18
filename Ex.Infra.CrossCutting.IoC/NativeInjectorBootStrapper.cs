@@ -39,12 +39,17 @@ namespace Ex.Infra.CrossCutting.IoC
             services.AddScoped<INotificationHandler<ProductUpdateEvent>, ProductEventHander>();
             services.AddScoped<INotificationHandler<OrderCreateEvent>, OrderEvenHander>();
 
+            services.AddScoped<INotificationHandler<OrderLineUpdateEvent>, OrderLineEventHander>();
+            services.AddScoped<INotificationHandler<OrderLineDeleteEvent>, OrderLineEventHander>();
+
             // Domain - Commands
             services.AddScoped<IRequestHandler<RegisterNewTenantCommand, ValidationResult>,TenantCommandHandler>();
             services.AddScoped<IRequestHandler<RegisterNewCustomerCommand, ValidationResult>, CustomerCommandHandler>();
             services.AddScoped<IRequestHandler<RegisterNewProductCommand, ValidationResult>,ProductCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateProductCommand, ValidationResult>, ProductCommandHandler>();
             services.AddScoped<IRequestHandler<CreateNewOrderCommand, ValidationResult>, OrderCommandHander>();
+            services.AddScoped<IRequestHandler<UpdateOrderLineCommand, ValidationResult>, OrderLineCommandHander>();
+            services.AddScoped<IRequestHandler<DeleteOrderLineCommand, ValidationResult>, OrderLineCommandHander>();
 
             // Infra - Data
             services.AddScoped<AppliactionContext>();

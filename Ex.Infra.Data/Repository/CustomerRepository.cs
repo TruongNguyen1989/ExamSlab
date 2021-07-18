@@ -31,5 +31,10 @@ namespace Ex.Infra.Data.Repository
         {
             Db.Dispose();
         }
+
+        public async Task<Customer> GetById(Guid Id)
+        {
+            return await DbSet.AsNoTracking().FirstOrDefaultAsync(c => c.Id == Id);
+        }
     }
 }

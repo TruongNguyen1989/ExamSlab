@@ -32,10 +32,23 @@ namespace Ex.WebApi.Controllers
             return await _orderAppService.GetOrders();
         }
         [AllowAnonymous]
-        [HttpGet("GetOrders")]
-        public async Task<IEnumerable<OrderViewModel>> GetOrder()
+        [Route("GetOrder/{Id}")]
+        [HttpGet]
+        public async Task<OrderViewModel> GetOrder([FromHeader] DeleteOrderLineModel Order)
         {
-            return await _orderAppService.GetOrders();
+            return await _orderAppService.GetOrder(Order.Id);
+        }
+        [AllowAnonymous]
+        [HttpPut("UpdateOrderItem")]
+        public async Task<IActionResult> UpdateOrderItem([FromBody] OrderLineUpdateModel orderLineUpdate)
+        {
+            return !ModelState.IsValid ? CustomResponse(ModelState) : CustomResponse(await _orderAppService.UpdateOrderItem(orderLineUpdate));
+        }
+        [AllowAnonymous]
+        [HttpPut("RemoveOrderItem/{Id}")]
+        public async Task<IActionResult> RemoveOrderItem([FromHeader] DeleteOrderLineModel deleteOrderLineModel)
+        {
+            return !ModelState.IsValid ? CustomResponse(ModelState) : CustomResponse(await _orderAppService.DeleteOrderItem(deleteOrderLineModel));
         }
     }
 }

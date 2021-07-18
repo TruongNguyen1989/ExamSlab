@@ -40,14 +40,31 @@ namespace Ex.Application.Services
             return await _mediator.SendCommand(registerCommand);
         }
 
+        public async Task<ValidationResult> DeleteOrderItem(DeleteOrderLineModel deleteOrderLineModel)
+        {
+            var registerCommand = _mapper.Map<DeleteOrderLineCommand>(deleteOrderLineModel);
+            return await _mediator.SendCommand(registerCommand);
+        }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);
         }
 
+        public async Task<OrderViewModel> GetOrder(Guid id)
+        {
+            return _mapper.Map<OrderViewModel>(await _orderRepository.GetById(id));
+        }
+
         public async Task<IEnumerable<OrderViewModel>> GetOrders()
         {
             return _mapper.Map<IEnumerable<OrderViewModel>>(await _orderRepository.GetOrders());
+        }
+
+        public async Task<ValidationResult> UpdateOrderItem(OrderLineUpdateModel orderLineUpdate)
+        {
+            var registerCommand = _mapper.Map<UpdateOrderLineCommand>(orderLineUpdate);
+            return await _mediator.SendCommand(registerCommand);
         }
     }
 }

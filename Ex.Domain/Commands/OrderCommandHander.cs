@@ -18,15 +18,33 @@ namespace Ex.Domain.Commands
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IProductRepository _prodcutRepository;
-        public OrderCommandHander(IOrderRepository orderRepository, IProductRepository productRepository)
+        private readonly ITenantRepository _tenantRepository;
+        private readonly ICustomerRepository _customerRepository;
+        public OrderCommandHander(IOrderRepository orderRepository, IProductRepository productRepository,
+            ITenantRepository tenantRepository,
+            ICustomerRepository customerRepository)
         {
             _orderRepository = orderRepository;
             _prodcutRepository = productRepository;
+            _tenantRepository = tenantRepository;
+            _customerRepository = customerRepository;
         }
         public async Task<ValidationResult> Handle(CreateNewOrderCommand request, CancellationToken cancellationToken)
         {
             if (!request.IsValid()) return request.ValidationResult;
+            var tenant = _tenantRepository.GetById(request.TenantId).Result;
+            var customer = _customerRepository.GetById(request.CustomerId).Result;
             var count = request.OrderLines.GroupBy(x => x.ProductId).Select(x => x.Key).Count();
+            if (tenant == null)
+            {
+                AddError("The Tenant does not exist.");
+                return ValidationResult;
+            }
+            if (customer == null)
+            {
+                AddError("The Customer does not exist.");
+                return ValidationResult;
+            }
             if (count > 1)
             {
                 AddError("Prodcut Items must be unique in Order.");

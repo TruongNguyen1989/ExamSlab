@@ -26,9 +26,5 @@ namespace Ex.Domain.Models
             this.ProductPrice = productPrice;
             this.Cost = cost;
         }
-        //internal static OrderLine CreateNew(Guid prodcutId, int quantity, double productPrice, double cost)
-        //{
-        //    return new OrderLine(prodcutId,quantity,productPrice,cost);
-        //}
     }
 }
