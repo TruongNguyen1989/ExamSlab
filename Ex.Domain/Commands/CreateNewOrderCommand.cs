@@ -10,7 +10,7 @@ namespace Ex.Domain.Commands
 {
     public class CreateNewOrderCommand : OrderCommand
     {
-        public CreateNewOrderCommand(Guid customerId, Guid tenantId, List<OrderLine> orderLines)
+        public CreateNewOrderCommand(Guid customerId, Guid tenantId,List<CreateOrderLine> orderLines)
         {
             CustomerId = customerId;
             TenantId = tenantId;

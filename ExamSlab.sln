@@ -11,29 +11,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{D5C402
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{5B385884-B057-463D-A3CB-A77CDFE0A4CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Application", "Ex.Application\Ex.Application.csproj", "{AEB66FB9-A280-429C-9D1B-BFDD2A851749}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex.Application", "Ex.Application\Ex.Application.csproj", "{AEB66FB9-A280-429C-9D1B-BFDD2A851749}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Domain", "Ex.Domain\Ex.Domain.csproj", "{9002C90B-E0A4-4701-A6C6-491DA48C0087}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex.Domain", "Ex.Domain\Ex.Domain.csproj", "{9002C90B-E0A4-4701-A6C6-491DA48C0087}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Domain.Core", "Ex.Domain.Core\Ex.Domain.Core.csproj", "{889901E0-E7DA-4559-AA30-221B36AEB9B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex.Domain.Core", "Ex.Domain.Core\Ex.Domain.Core.csproj", "{889901E0-E7DA-4559-AA30-221B36AEB9B9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{99799664-F2F9-4AED-9A26-9A059E59A4C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{DBF3EB9C-D64B-4AA5-AF70-7D11FED2C54C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Infra.Data", "Ex.Infra.Data\Ex.Infra.Data.csproj", "{FF8CC7F4-1E21-4564-A533-F1449C7398EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex.Infra.Data", "Ex.Infra.Data\Ex.Infra.Data.csproj", "{FF8CC7F4-1E21-4564-A533-F1449C7398EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Infra.CrossCutting.Bus", "Ex.Infra.CrossCutting.Bus\Ex.Infra.CrossCutting.Bus.csproj", "{FA35E0AA-B10C-422A-A917-A736F36DF9E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex.Infra.CrossCutting.Bus", "Ex.Infra.CrossCutting.Bus\Ex.Infra.CrossCutting.Bus.csproj", "{FA35E0AA-B10C-422A-A917-A736F36DF9E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.WebApi", "Ex.WebApi\Ex.WebApi.csproj", "{59A52518-361E-4C81-8E5C-B04191EFF344}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex.WebApi", "Ex.WebApi\Ex.WebApi.csproj", "{59A52518-361E-4C81-8E5C-B04191EFF344}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Infra.CrossCutting.IoC", "Ex.Infra.CrossCutting.IoC\Ex.Infra.CrossCutting.IoC.csproj", "{BA764272-F2BE-46A6-A9FC-A115FC261D16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex.Infra.CrossCutting.IoC", "Ex.Infra.CrossCutting.IoC\Ex.Infra.CrossCutting.IoC.csproj", "{BA764272-F2BE-46A6-A9FC-A115FC261D16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex.Infra.CrossCutting.Identity", "Ex.Infra.CrossCutting.Identity\Ex.Infra.CrossCutting.Identity.csproj", "{B7A04B0D-A4C1-40C8-8165-6CF67E2EBBD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex.Infra.CrossCutting.Identity", "Ex.Infra.CrossCutting.Identity\Ex.Infra.CrossCutting.Identity.csproj", "{B7A04B0D-A4C1-40C8-8165-6CF67E2EBBD2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{40B01B74-BEB5-4E74-899C-F5E7DBABA9DE}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		C:\Users\PrtruongIT\Downloads\Test.png = C:\Users\PrtruongIT\Downloads\Test.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{C9F5A197-9048-4023-8DBC-CFA1E55DD3C0}"

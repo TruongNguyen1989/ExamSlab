@@ -15,6 +15,6 @@ namespace Ex.Application.ViewModels
         public Guid CustomerId { get; set; }
         [Required(ErrorMessage = "The Title is Required")]
         public Guid TenantId { get; set; }
-        public List<OrderLine> OrderLines { get; set; }
+        public List<CreateOrderLine> OrderLines { get; set; }
     }
 }

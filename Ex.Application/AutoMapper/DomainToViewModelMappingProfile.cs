@@ -15,6 +15,7 @@ namespace Ex.Application.AutoMapper
         {
             CreateMap<Tenant, TenantViewModel>();
             CreateMap<Product, ProductViewModel>();
+            CreateMap<Order, OrderViewModel>();
         }
     }
 }

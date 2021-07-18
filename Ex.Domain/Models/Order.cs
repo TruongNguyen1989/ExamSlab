@@ -13,7 +13,7 @@ namespace Ex.Domain.Models
         private float _Number { get; set; }
         private Guid _TenantId { get; set; }
         private double _Sum { get; set; }
-        private readonly List<OrderLine> _orderLines ;
+        private readonly List<OrderLine> _orderLines = new List<OrderLine>() ;
 
         protected Order()
         {
@@ -33,14 +33,20 @@ namespace Ex.Domain.Models
             Number = number;
             TenantId = tenantId;
             Sum = sum;
+
         }
-        public void AddOrderItem(Guid productId, int quantity,double productPrice,double cost)
+        public void AddOrderItem(IEnumerable<OrderLine> neworderLines)
         {
-            if (_orderLines.Count >= 5)
+            if (neworderLines == null)
             {
-                throw new Exception("Order cannot have more than 5 order lines.");
+                throw new ArgumentNullException(nameof(neworderLines));
             }
-            _orderLines.Add(OrderLine.CreateNew(productId,quantity,productPrice,cost));
+            if (!neworderLines.Any())
+            {
+                throw new ArgumentException("Must have at least 1 order line.", nameof(neworderLines));
+            }
+            _orderLines.Clear();
+            _orderLines.AddRange(neworderLines);
         }
         public double GetSum()
         {

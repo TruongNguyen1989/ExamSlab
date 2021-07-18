@@ -11,5 +11,6 @@ namespace Ex.Application.Interfaces
     public interface IOrderAppService : IDisposable
     {
         Task<ValidationResult> Add(CreateOrderModel createOrderModel);
+        Task<IEnumerable<OrderViewModel>> GetOrders();
     }
 }

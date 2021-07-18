@@ -9,6 +9,6 @@ namespace Ex.Domain.Commands.Validations
 {
     public class OrderValidation<T> : AbstractValidator<T> where T : OrderCommand
     {
-
+       
     }
 }
