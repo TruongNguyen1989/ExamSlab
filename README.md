@@ -2,10 +2,7 @@
 ![alt text](https://github.com/TruongNguyen1989/ExamSlab/blob/master/Test.png)
 ## Run Project:
 
-- add-migration NewEvent -Context EventStoreSqlContext
 - update-database -Context EventStoreSqlContext
-
-- add-migration NewTest -Context AppliactionContext
 - update-database -Context AppliactionContext
 
 ## Technologies implemented:
